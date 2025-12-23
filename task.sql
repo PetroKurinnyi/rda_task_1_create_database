@@ -5,7 +5,7 @@ CREATE TABLE Products (
     ID INT PRIMARY KEY AUTO_INCREMENT,
     Name VARCHAR(100),
     Description VARCHAR(100),
-    Price DECIMAL(10, 2),
+    Price INT,
     WarehouseAmount INT
 );
 
@@ -21,7 +21,7 @@ CREATE TABLE Orders (
     ID INT PRIMARY KEY AUTO_INCREMENT,
     CustomerID INT,
     FOREIGN KEY (CustomerID) REFERENCES Customers(ID) ON DELETE SET NULL,
-    Date DATETIME
+    Date DATE
 );
 
 CREATE TABLE OrderItems (
